@@ -59,19 +59,23 @@ daily-grind-server/
 
 **1. What is the difference between `res.send()` and `res.sendFile()`, and when would you use each?**
 
-The difference is res.send() sends text while res.sendFile() sends the entire file. If you want to send just a text just use res.send and if you want
-to send out an entire file/ webpage use sendFile instead
+The difference is that `res.send()` sends text, while `res.sendFile()` sends an entire file. If you just want to send text, use `res.send()`, and if you want
+to send an entire file or webpage, use `res.sendFile()` instead.
 
 **2. Why is the `path` module needed when serving files, and what could go wrong with a relative path like `'public/index.html'`?**
 
-The path is needed when you want to send out files when using sendFile because path handles cross-platform path differences. If we use a different folder it wouldnt be able to find and the entire file wouldnt show.
+The `path` module is needed when you want to send files using `res.sendFile()` because it handles cross-platform path differences. If we ran the server from a different folder, it wouldn't be able to find the file, and the page wouldn't show.
 
 **3. How would you add a third page, such as a menu page?**
 
-to add a third page you would make your menuPage.html inside of the publics folder and then inside of the server.js file you would then add app.get('/menuPage', (req, res) => {
+To add a third page, you would make your `menuPage.html` inside of the `public` folder, and then add this route inside of the `server.js` file:
+
+```js
+app.get('/menuPage', (req, res) => {
    res.sendFile(path.join( import.meta.dirname, 'public/menuPage.html'))
 });
+```
 
 ## What I Learned
 
-I learned how to make a live server, make multiple pages/files live by using sendFile with path.join. How to create a node.js file, why we use module instead of commonjs for files.
+I learned how to make a live server and how to make multiple pages/files live by using `sendFile` with `path.join`. I also learned how to create a Node.js file and why we use ES Modules instead of CommonJS for files.
