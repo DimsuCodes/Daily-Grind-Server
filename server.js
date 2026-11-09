@@ -8,7 +8,7 @@ const app = express(); //this is the express app
 const port = 3000 //defining our port which will be 3000
 
 app.get('/home',(req, res) => {
-    res.sendFile("Welcome to Dimsu's Home Page!")
+    res.sendFile(path.jon(mkdirname, import.meta.dirname, 'public/index.html'))
 }); //set up our GET request for homepage.
 
 app.get('/contact', (req,res) => {
