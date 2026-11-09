@@ -8,7 +8,7 @@ const app = express(); //this is the express app
 const port = 3000 //defining our port which will be 3000
 
 app.get('/',(req, res) => {
-    res.send("Welcome to Dimsu's World!")
+    res.sendFile("Welcome to Dimsu's World!")
 }) //set up our GET request
 
 
