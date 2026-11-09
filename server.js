@@ -7,15 +7,19 @@ const app = express(); //this is the express app
 
 const port = 3000 //defining our port which will be 3000
 
-app.get('/home',(req, res) => {
-    res.sendFile(path.jon(mkdirname, import.meta.dirname, 'public/index.html'))
+app.get('/',(req, res) => {
+    res.sendFile(path.join( import.meta.dirname, 'public/index.html'))
 }); //set up our GET request for homepage.
 
 app.get('/contact', (req,res) => {
-    res.sendFile("Contact Dimsu!")
+    res.sendFile(path.join( import.meta.dirname, 'public/contact.html'))
 }); //set up our get request for the contact page.
 
+//now we need the app to listen so it can turn on by adding app.list
 
+app.listen(port,() => {
+    console.log('Server is running on port: 3000')
+});
 
 
 
